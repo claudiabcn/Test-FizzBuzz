@@ -36,22 +36,34 @@ describe("FizzBuzz test for multiples of 3 and 5", () => {
   });
 
   test("returns FizzBuzz when multiple of 3 and 5", () => {
-    //Gherking test
-    /**
-     * Scenario: Número divisible por 3 y 5
-     * Given un número 15
-     * When el número es procesado
-     * Then se muestra "FizzBuzz"
-     */
+    let valor_entrada = 15;
+    let respuesta_esperada = {
+      status: "success",
+      message: "Number processed correctly",
+      data: {
+        input: 15,
+        result: "FizzBuzz",
+      },
+    };
+    let result = calculateFizzBuzz(valor_entrada);
+    expect(typeof result.data.input).toBe("number");
+    expect(result).toEqual(respuesta_esperada);
+    expect(result.data.result).toBe("FizzBuzz");
   });
 
   test("returns number when is not multiple of 3 and 5", () => {
-    //Gherking test
-    /**
-     * Scenario: Número no divisible por 3 ni 5
-     * Given un número 8
-     * When el número es procesado
-     * Then se muestra el número ingresado
-     */
+    let valor_entrada = 7;
+    let respuesta_esperada = {
+      status: "success",
+      message: "Number processed correctly",
+      data: {
+        input: 7,
+        result: "7",
+      },
+    };
+    let result = calculateFizzBuzz(valor_entrada);
+    expect(typeof result.data.input).toBe("number");
+    expect(result).toEqual(respuesta_esperada);
+    expect(result.data.result).toBe("7");
   });
 });
