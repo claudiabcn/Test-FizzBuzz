@@ -81,4 +81,36 @@ describe("FizzBuzz test for multiples of 3 and 5", () => {
     expect(result.status).toBe("error");
     expect(result.message).toBe("Debes ingresar un número!");
   });
+
+  test("returns Fizz and Buzz in the history sequentially ", () => {
+    let valor_entrada1 = 9;
+    let respuesta_esperada1 = {
+      status: "success",
+      message: "Number processed correctly",
+      data: {
+        input: 9,
+        result: "Fizz",
+      },
+    };
+
+    let result1 = calculateFizzBuzz(valor_entrada1);
+    expect(typeof result1.data.input).toBe("number");
+    expect(result1).toEqual(respuesta_esperada1);
+    expect(result1.data.result).toBe("Fizz");
+
+    let valor_entrada2 = 10;
+    let respuesta_esperada2 = {
+      status: "success",
+      message: "Number processed correctly",
+      data: {
+        input: 10,
+        result: "Buzz",
+      },
+    };
+
+    let result2 = calculateFizzBuzz(valor_entrada2);
+    expect(typeof result2.data.input).toBe("number");
+    expect(result2).toEqual(respuesta_esperada2);
+    expect(result2.data.result).toBe("Buzz");
+  });
 });
