@@ -76,12 +76,9 @@ describe("FizzBuzz test for multiples of 3 and 5", () => {
     };
 
     let result = calculateFizzBuzz(valor_entrada);
-
     expect(result).toEqual(respuesta_esperada);
     expect(result.data).toBeNull();
     expect(result.status).toBe("error");
     expect(result.message).toBe("Debes ingresar un número!");
   });
-
-
 });
