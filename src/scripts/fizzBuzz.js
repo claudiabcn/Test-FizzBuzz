@@ -32,12 +32,3 @@ export function calculateFizzBuzz(num) {
     };
   }
 }
-
-console.log(calculateFizzBuzz(5));
-console.log(calculateFizzBuzz(15));
-console.log(calculateFizzBuzz(3));
-console.log(calculateFizzBuzz(2));
-
-console.log(calculateFizzBuzz("Holaaa"));
-console.log(calculateFizzBuzz(-1));
-console.log(calculateFizzBuzz());

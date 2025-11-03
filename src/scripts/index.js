@@ -20,14 +20,23 @@ function processFizzBuzz() {
 }
 
 function updateHistoryDisplay() {
+  if (history.length > 0) {
+    historyContainer.classList.remove("hidden");
+  }
+
   historyList.innerHTML = "";
+
   history
     .slice()
     .reverse()
     .forEach((entry) => {
       const listItem = document.createElement("li");
-      listItem.innerHTML = `<span>${entry.input}</span>
-    <span>${entry.result}</span>`;
+      listItem.className = `p-3 rounded-lg bg-purple-50 border border-purple-200 flex justify-between items-center`;
+      listItem.innerHTML = `
+            <span class="text-base font-medium text-gray-600">${entry.input}</span>
+            <span class="text-base font-medium text-gray-600">-></span>
+            <span class="text-base font-bold text-purple-600">${entry.result}</span>
+        `;
       historyList.appendChild(listItem);
     });
 }
