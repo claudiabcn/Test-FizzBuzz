@@ -21,12 +21,15 @@ function processFizzBuzz() {
 
 function updateHistoryDisplay() {
   historyList.innerHTML = "";
-  history.slice().forEach((entry) => {
-    const listItem = document.createElement("li");
-    listItem.innerHTML = `<span>${entry.input}</span>
+  history
+    .slice()
+    .reverse()
+    .forEach((entry) => {
+      const listItem = document.createElement("li");
+      listItem.innerHTML = `<span>${entry.input}</span>
     <span>${entry.result}</span>`;
-    historyList.appendChild(listItem);
-  });
+      historyList.appendChild(listItem);
+    });
 }
 
 button.addEventListener("click", processFizzBuzz);
