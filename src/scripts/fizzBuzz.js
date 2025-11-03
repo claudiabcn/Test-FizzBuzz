@@ -1,4 +1,4 @@
-function calculateFizzBuzz(num) {
+export function calculateFizzBuzz(num) {
   try {
     if (isNaN(num) || num === null || num === undefined) {
       throw new Error("Debes ingresar un número!");
